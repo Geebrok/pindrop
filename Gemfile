@@ -15,8 +15,4 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-group :prodcution do
-  gem 'pg'
-  gem 'rails_12factor'
-end
 
