@@ -1,5 +1,7 @@
-<div class="container center">
-	<h1>This is Pindrop</h1>
-	<%= link_to "Sign Me Up", "#", class: "btn btn-default" %>
-	<%= link_to "Log me in", "#", class: "btn btn-default" %>
+</br><div class="container center">
+	<h1>Lets go shopping</h1></br></br>
+	<% if user_signed_in? %>
+	<% else %>
+		<%= link_to "Get started", new_user_registration_path, class: "btn btn-default btn-lg" %>
+	<% end %>
 </div>
