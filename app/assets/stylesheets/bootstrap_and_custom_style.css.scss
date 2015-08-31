@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 $font-family-sans-serif: 'Open Sans', sans-serif;
-$font-size-base: 16px;
+$font-size-base: 14px;
 $body-bg:	#fff;
 $navbar-default-bg:	#fff;
 $navbar-border-radius: none;
@@ -16,5 +16,6 @@ $navbar-default-brand-hover-color: #26c6da;
 }
 
 .navbar-brand {
-	font-weight: bold;
+	font-size:		25px;
+	font-weight: 	bold;
 }

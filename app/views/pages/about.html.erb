@@ -1,2 +1,9 @@
-<h1>About Pindrop App</h1>
-<p>Pin the the things you love blah blah blah</p>
+<br><div class="container center">
+	<h1>About Pindrop App</h1></br>
+	<p>Pin the the things you love blah blah blah</p></br>
+
+	<% if user_signed_in? %>
+	<% else %>
+	<%= link_to "Sign in", new_user_session_path, class: "btn btn-primary btn-lg" %>
+	<% end %>
+</div>
