@@ -13,12 +13,11 @@
       <% end %>
 
       <div class="form-group">
-        <%= f.label :description %><br>
-        <%= f.text_field :description %>
+        <%= f.text_field :description, placeholder: "description", autofocus: true, class: "form-control" %>
       </div>
 
-      <div class="actions">
-        <%= f.submit %>
+      <div class="actions center">
+        <%= f.submit "Update", class: "btn btn-primary" %>
       </div>
     <% end %>
 
