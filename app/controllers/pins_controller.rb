@@ -20,29 +20,20 @@ class PinsController < ApplicationController
 
   def create
     @pin = current_user.pins.build(pin_params)
-
-    respond_to do |format|
-      if @pin.save
-        format.html { redirect_to @pin, notice: 'Pin was successfully created.' }
-        format.json { render :show, status: :created, location: @pin }
-      else
-        format.html { render :new }
-        format.json { render json: @pin.errors, status: :unprocessable_entity }
-      end
+    if @pin.save
+      redirect_to @pin, notice: 'Pin was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /pins/1
   # PATCH/PUT /pins/1.json
   def update
-    respond_to do |format|
-      if @pin.update(pin_params)
-        format.html { redirect_to @pin, notice: 'Pin was successfully updated.' }
-        format.json { render :show, status: :ok, location: @pin }
-      else
-        format.html { render :edit }
-        format.json { render json: @pin.errors, status: :unprocessable_entity }
-      end
+    if @pin.update(pin_params)
+      redirect_to pin_path, notice: 'Pin was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -69,6 +60,6 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:description)
+      params.require(:pin).permit(:description, :image)
     end
 end
