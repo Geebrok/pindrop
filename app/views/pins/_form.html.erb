@@ -20,7 +20,7 @@
     <%= f.file_field :image %>
   </div>
 
-    <% if @pin.user == current_user %>
+    <% if current_user.pins.find_by(id: params[:id]) %>
       <div class="form-group">
         <%= f.submit "Update Pin", class: "btn btn-primary" %>
       </div>
