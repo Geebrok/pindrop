@@ -6,9 +6,10 @@
 
     <div class="panel panel-body">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
         <div class="form-group">
           <%= f.email_field :email, autofocus: true, placeholder: "email", class: "form-control" %>
-        </div>
+        </div>       
 
         <div class="field">
           <%= f.password_field :password, autocomplete: "off", placeholder: "password", class: "form-control" %>
