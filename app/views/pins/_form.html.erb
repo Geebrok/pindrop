@@ -18,11 +18,12 @@
     <%= f.text_field :description, placeholder: "description", autofocus: true, class: "form-control" %>
   </div>
 
-  <div>
-    <p>Current image</p>
-    <%= image_tag @pin.image.url(:medium) %>
-  </di></br></br>
-
+  <% if current_user.pins.find_by(id: params[:id]) %>
+    <div>
+      <p>Current image</p>
+      <%= image_tag @pin.image.url(:medium) %>
+    </di></br></br>
+  <% end %>
 
   <div class="form-group">
     <%= f.file_field :image %>
