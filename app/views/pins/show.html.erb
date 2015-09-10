@@ -1,13 +1,15 @@
-<%= image_tag @pin.image.url(:medium) %>
+<div class="col-md-4 col-md-offset-4">
 
-<p>
-  <strong>Description:</strong>
-  <%= @pin.description %>
-</p>
+	<%= image_tag @pin.image.url(:medium) %>
 
-<% if @pin.user == current_user %>
-	<%= link_to 'Edit', edit_pin_path(@pin) %> |
-	<%= link_to 'Back', pins_path %>
-<% else %>
-	<%= link_to 'Back', pins_path %>
-<% end %>
+	<h3><%= @pin.description %></h3>
+	<% if @pin.user == current_user %>
+		<p class="center"><%= link_to 'Edit', edit_pin_path(@pin), class: "btn btn-default" %>
+		<%= link_to 'Back', pins_path, class: "btn btn-default" %></p>
+		<p>To permenantly remove this pin click the button</p>
+		<p class="center"><%= link_to 'Delete', @pins, class: "btn btn-danger" %></p>
+	<% else %>
+		<p class="center"><%= link_to 'Back', pins_path, class: "btn btn-default" %></p>
+	<% end %>
+
+</div>
