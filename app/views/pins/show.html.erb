@@ -3,13 +3,16 @@
 	<%= image_tag @pin.image.url(:medium) %>
 
 	<h3><%= @pin.description %></h3>
-	<% if @pin.user == current_user %>
-		<p class="center"><%= link_to 'Edit', edit_pin_path(@pin), class: "btn btn-default" %>
-		<%= link_to 'Back', pins_path, class: "btn btn-default" %></p>
-		<p>To permenantly remove this pin click the button</p>
-		<p class="center"><%= link_to 'Delete', @pins, class: "btn btn-danger" %></p>
-	<% else %>
-		<p class="center"><%= link_to 'Back', pins_path, class: "btn btn-default" %></p>
-	<% end %>
+
+	<div class="center">
+		<% if @pin.user == current_user %>			
+			<p><%= link_to 'Edit', edit_pin_path(@pin), class: "btn btn-default" %>
+			<%= link_to 'Back', pins_path, class: "btn btn-default" %></p>
+			<p>To remove this pin just hit delete yo</p>
+			<%= link_to 'Delete', @pins, method: :delete, data: { confirm: "Are you sure" }, class: "btn btn-danger" %>			
+		<% else %>
+			<p><%= link_to 'Back', pins_path, class: "btn btn-default" %></p>
+		<% end %>
+	</div>
 
 </div>
