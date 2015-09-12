@@ -9,6 +9,7 @@ $navbar-default-border: none;
 $navbar-default-link-hover-color: #26c6da;
 $navbar-default-brand-hover-color: #26c6da;
 
+@import "bootstrap-sprockets";
 @import 'bootstrap';
 
 .center {

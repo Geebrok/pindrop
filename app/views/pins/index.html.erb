@@ -1,9 +1,16 @@
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
-    <div class="box">
+    
+    <div class="box panel panel-default">
       <%= link_to image_tag(pin.image.url(:small)), pin %>
-      <%= pin.description %></br>
-      <%= pin.user.email %></br>
+      <div class="panel-body">
+	      <%= pin.description %>
+	     	<% if pin.user.name %>
+		      <h6><span class="glyphicon glyphicon-user" aria-hidden="true"></span> | <%= pin.user.name %></h6>
+	     	<% else %>
+		      <h6><span class="glyphicon glyphicon-user" aria-hidden="true"></span> | <%= "No user name" %></h6>
+	    	<% end %>
+	    </div>
     </div>
   <% end %>   
 </div>
