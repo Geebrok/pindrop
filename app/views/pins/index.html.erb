@@ -4,7 +4,7 @@
       <%= link_to image_tag(pin.image.url(:small)), pin %>
       <div class="panel-body">
 	      <%= pin.description %>
-		    <h6><span class="glyphicon glyphicon-user" aria-hidden="true"></span> | <%= pin.user.name %></h6>
+		    <h6><span class="glyphicon glyphicon-user" aria-hidden="true"></span> | <%= pin.user.name if pin.user %></h6>
 	    </div>
     </div>
   <% end %>

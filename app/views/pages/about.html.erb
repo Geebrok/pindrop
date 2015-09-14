@@ -3,6 +3,7 @@
 	<p>Pin the the things you love blah blah blah</p></br>
 
 	<% if user_signed_in? %>
+	<%= link_to "Get Started", new_pin_path, class: "btn btn-success btn-lg" %>
 	<% else %>
 	<%= link_to "Sign in", new_user_session_path, class: "btn btn-primary btn-lg" %>
 	<% end %>
