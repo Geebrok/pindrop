@@ -3,7 +3,6 @@ class PinsController < ApplicationController
   before_action :check_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
 
-
   def index
     @pins = Pin.all.order("created_at DESC")
   end
